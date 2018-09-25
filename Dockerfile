@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-COPY target/spring-boot-2-jpa-spring-data-rest-0.0.1-SNAPSHOT.jar  app.jar
+WORKDIR /
+COPY target/gs-spring-boot-docker-0.1.0.jar my-app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+CMD java -jar my-app.jar
